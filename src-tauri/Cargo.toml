@@ -1,0 +1,26 @@
+[package]
+name = "work-hub"
+version = "1.0.0"
+description = "个人办公核心枢纽 - 桌面端应用"
+authors = ["you"]
+edition = "2021"
+
+[lib]
+name = "work_hub_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+
+[package.metadata.bundle]
+identifier = "com.workhub.app"
+icon = []

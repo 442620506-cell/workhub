@@ -1,0 +1,249 @@
+/* XMind风格思维导图样式 */
+
+/* 产品脉络弹窗 - 更大的尺寸 */
+.modal.mindmap-modal {
+  width: 900px;
+  max-width: 95vw;
+  height: 600px;
+  max-height: 85vh;
+}
+
+.modal.mindmap-modal .modal-body-full {
+  height: calc(100% - 48px);
+  overflow: hidden;
+}
+
+.mindmap-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* 工具栏 */
+.mindmap-toolbar {
+  position: absolute;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  z-index: 100;
+}
+
+.mindmap-toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--surface-subtle);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.mindmap-toolbar-btn:hover {
+  background: var(--surface-hover);
+  color: var(--primary);
+}
+
+.zoom-level {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  min-width: 40px;
+  text-align: center;
+}
+
+/* 画布 */
+.mindmap-canvas {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  user-select: none;
+}
+
+.mindmap-canvas:active {
+  cursor: grabbing;
+}
+
+.mindmap-content {
+  position: absolute;
+  will-change: transform;
+}
+
+/* SVG连线 */
+.mindmap-lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.mindmap-line {
+  stroke-dasharray: none;
+  opacity: 0.6;
+}
+
+/* 节点样式 */
+.mindmap-node {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+  max-width: 200px;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.mindmap-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 产品节点 - 中心大节点 */
+.mindmap-node.product {
+  min-width: 120px;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-weight: var(--font-weight-semibold);
+}
+
+.mindmap-node.product::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+/* 年份节点 */
+.mindmap-node.year {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: var(--font-size-sm);
+}
+
+.mindmap-node.year::after {
+  content: '年';
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+  margin-left: var(--spacing-1);
+}
+
+/* 网省节点 */
+.mindmap-node.province {
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: var(--font-size-sm);
+}
+
+/* 项目节点 */
+.mindmap-node.project {
+  background: white;
+  font-size: var(--font-size-sm);
+}
+
+.mindmap-node.project::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+/* 颜色样式 */
+.mindmap-node.blue { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
+.mindmap-node.blue::before { background: #3b82f6; }
+.mindmap-node.blue .node-label { color: #1e40af; }
+
+.mindmap-node.green { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); }
+.mindmap-node.green::before { background: #10b981; }
+.mindmap-node.green .node-label { color: #065f46; }
+
+.mindmap-node.orange { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+.mindmap-node.orange::before { background: #f59e0b; }
+.mindmap-node.orange .node-label { color: #92400e; }
+
+.mindmap-node.purple { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); }
+.mindmap-node.purple::before { background: #8b5cf6; }
+.mindmap-node.purple .node-label { color: #5b21b6; }
+
+.mindmap-node.red { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); }
+.mindmap-node.red::before { background: #ef4444; }
+.mindmap-node.red .node-label { color: #991b1b; }
+
+.mindmap-node.gray { background: #f3f4f6; color: #4b5563; }
+
+/* 展开收起按钮 */
+.node-expand-btn {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: var(--text-muted);
+  z-index: 20;
+}
+
+.node-expand-btn:hover {
+  color: var(--primary);
+}
+
+/* 节点内容 */
+.node-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.node-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.node-meta {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* 提示 */
+.mindmap-hint {
+  position: absolute;
+  bottom: var(--spacing-3);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  padding: var(--spacing-1) var(--spacing-3);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  opacity: 0.8;
+}

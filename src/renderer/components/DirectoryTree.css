@@ -1,0 +1,120 @@
+/* 目录树组件样式 */
+
+.directory-tree {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.directory-tree-header {
+  padding: var(--size-12) var(--size-16);
+  background: var(--color-bg-1);
+  border-bottom: 1px solid var(--color-stroke-primary);
+}
+
+.directory-base-path {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+  font-family: monospace;
+}
+
+.directory-tree-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--size-8);
+}
+
+/* 树节点 */
+.tree-node {
+  margin-bottom: var(--size-2);
+}
+
+.tree-node-row {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  padding: var(--size-6) var(--size-8);
+  border-radius: var(--size-6);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.tree-node-row:hover {
+  background: var(--color-primary-hovered);
+}
+
+.tree-node-row.product-root,
+.tree-node-row.project-root {
+  font-weight: 600;
+  color: var(--color-fg-primary);
+}
+
+.tree-node-row.year {
+  color: var(--color-fg-secondary);
+}
+
+.tree-node-row.province {
+  color: var(--color-fg-secondary);
+}
+
+.tree-node-row.product {
+  font-weight: 500;
+}
+
+.tree-node-row.project {
+  font-weight: 500;
+}
+
+.tree-node-row.folder {
+  color: var(--color-fg-dim);
+}
+
+.tree-expand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-16);
+  height: var(--size-16);
+  color: var(--color-fg-dim);
+}
+
+.tree-expand-placeholder {
+  width: var(--size-16);
+}
+
+.tree-dot {
+  width: var(--size-8);
+  height: var(--size-8);
+  border-radius: 50%;
+}
+
+.tree-dot.blue { background: var(--color-brand-5); }
+.tree-dot.green { background: #10b981; }
+.tree-dot.orange { background: #f59e0b; }
+.tree-dot.purple { background: #8b5cf6; }
+.tree-dot.red { background: #ef4444; }
+
+.tree-node-name {
+  flex: 1;
+  font-size: var(--size-13);
+}
+
+.tree-node-count {
+  font-size: var(--size-11);
+  color: var(--color-fg-dim);
+  padding: var(--size-2) var(--size-6);
+  background: var(--color-bg-1);
+  border-radius: var(--size-4);
+}
+
+.tree-product-link {
+  font-size: var(--size-11);
+  color: var(--color-brand-5);
+  padding: var(--size-2) var(--size-6);
+  background: var(--color-brand-bg);
+  border-radius: var(--size-4);
+}
+
+.tree-node-children {
+  margin-left: var(--size-8);
+}

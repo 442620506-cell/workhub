@@ -1,0 +1,291 @@
+/* 产品脉络图样式 */
+
+.evolution-map {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+}
+
+/* 关系图区域 */
+.evolution-graph {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-subtle);
+  border-radius: var(--radius-md);
+}
+
+.connection-lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.connection-line {
+  stroke: var(--border-subtle);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
+/* 产品中心卡片 */
+.product-card-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+
+.product-color-indicator {
+  width: 100%;
+  height: 4px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-2);
+}
+
+.product-color-indicator.blue { background: var(--color-blue); }
+.product-color-indicator.green { background: var(--color-green); }
+.product-color-indicator.orange { background: var(--color-orange); }
+.product-color-indicator.purple { background: var(--color-purple); }
+.product-color-indicator.red { background: var(--color-red); }
+
+.product-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  text-align: center;
+}
+
+.product-card-name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+}
+
+.product-card-years {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.product-card-count {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* 项目节点卡片 */
+.project-card-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card-node:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.05);
+}
+
+.project-card-node::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.project-card-node.blue::before { background: var(--color-blue); }
+.project-card-node.green::before { background: var(--color-green); }
+.project-card-node.orange::before { background: var(--color-orange); }
+.project-card-node.purple::before { background: var(--color-purple); }
+.project-card-node.red::before { background: var(--color-red); }
+
+.project-card-year {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.project-card-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-card-province {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* AI 分析按钮区域 */
+.evolution-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.ai-analysis-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4);
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ai-analysis-btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* 文件脉络区域 */
+.file-evolution-section {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+}
+
+.file-evolution-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.file-evolution-header:hover {
+  background: var(--surface-hover);
+}
+
+.header-icon {
+  color: var(--text-muted);
+}
+
+.header-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+}
+
+.header-count {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.file-evolution-content {
+  padding: var(--spacing-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.file-source-row {
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  transition: background 0.2s;
+}
+
+.file-source-row:hover {
+  background: var(--surface-hover);
+}
+
+.file-source-row.selected {
+  background: var(--surface-active);
+  border: 1px solid var(--primary);
+}
+
+.file-source-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.file-source-name {
+  font-size: var(--font-size-sm);
+  color: var(--text);
+}
+
+.file-source-type {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.file-derived-count {
+  font-size: var(--font-size-xs);
+  color: var(--primary);
+  margin-left: auto;
+}
+
+.file-derived-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  margin-top: var(--spacing-2);
+  padding-left: var(--spacing-4);
+}
+
+.file-derived-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-1) var(--spacing-2);
+  background: var(--surface-subtle);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+}
+
+.file-derived-item:hover {
+  background: var(--surface-hover);
+}
+
+.derived-file-name {
+  flex: 1;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.derived-file-project {
+  color: var(--text-secondary);
+}
+
+.derived-score {
+  color: var(--color-green);
+  font-weight: var(--font-weight-medium);
+}

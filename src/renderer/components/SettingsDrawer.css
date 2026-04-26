@@ -1,0 +1,234 @@
+.settings-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.settings-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease-out;
+  overflow: hidden;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4) var(--spacing-6);
+  background: var(--surface-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sd-header h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.sd-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--surface-hover);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sd-close:hover {
+  background: var(--surface-active);
+}
+
+.sd-content {
+  flex: 1;
+  padding: var(--spacing-4) var(--spacing-6);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.settings-section-title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.settings-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  background: var(--surface-subtle);
+  border-radius: var(--radius-md);
+}
+
+.settings-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+}
+
+.settings-select {
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.settings-input {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.settings-input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.settings-input-path {
+  flex: 1;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.settings-input-path:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.settings-path-row {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.settings-hint {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.settings-actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.btn-sm {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-xs);
+}
+
+.btn-secondary {
+  background: var(--surface-subtle);
+  color: var(--text-secondary);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-hover);
+}
+
+/* Tab 切换样式 */
+.settings-tabs {
+  display: flex;
+  gap: var(--size-4);
+  padding: var(--size-8) var(--size-16);
+  background: var(--color-bg-2);
+  border-bottom: 1px solid var(--color-stroke-primary);
+}
+
+.settings-tab-btn {
+  padding: var(--size-6) var(--size-12);
+  border: none;
+  background: transparent;
+  color: var(--color-fg-secondary);
+  font-size: var(--size-13);
+  cursor: pointer;
+  border-radius: var(--size-6);
+  transition: var(--transition-colors);
+}
+
+.settings-tab-btn:hover {
+  background: var(--color-primary-hovered);
+}
+
+.settings-tab-btn.active {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+/* 目录结构区块 */
+.structure-section {
+  height: 100%;
+}
+
+.structure-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.structure-header .settings-section-title {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.directory-tree-wrapper {
+  flex: 1;
+  min-height: 300px;
+  background: var(--color-bg-2);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-8);
+  overflow: hidden;
+}

@@ -1,0 +1,162 @@
+.header-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  height: 56px;
+}
+
+/* 按钮组居中 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* iOS风格按钮 */
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #1e1e1e;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.header-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.header-btn:active {
+  background: rgba(0, 0, 0, 0.12);
+  transform: scale(0.97);
+}
+
+.header-btn.active {
+  background: #007aff;
+  color: white;
+}
+
+.btn-icon {
+  font-size: 16px;
+}
+
+.btn-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 内容输入面板 - Obsidian风格 */
+.input-panel {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 560px;
+  max-width: calc(100vw - 40px);
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  animation: fadeIn 0.2s ease;
+}
+
+.input-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.input-panel-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+.close-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.close-btn-svg {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.close-btn-svg:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.input-textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 16px 20px;
+  border: none;
+  resize: vertical;
+  font-size: 15px;
+  line-height: 1.6;
+  outline: none;
+  background: white;
+}
+
+.input-textarea::placeholder {
+  color: #999;
+}
+
+.input-panel-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #fafafa;
+  border-radius: 0 0 16px 16px;
+}
+
+.input-panel-actions .btn-primary {
+  background: #007aff;
+}
+
+.input-panel-actions .btn-secondary {
+  background: white;
+  border: 1px solid #e5e5e5;
+}

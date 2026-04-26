@@ -1,0 +1,37 @@
+{
+  "name": "work-hub",
+  "version": "1.0.0",
+  "description": "个人办公核心枢纽 - 桌面端应用",
+  "scripts": {
+    "dev:vite": "vite",
+    "build:vite": "vite build",
+    "preview:vite": "vite preview",
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "keywords": [
+    "work",
+    "task",
+    "office",
+    "desktop"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "dependencies": {
+    "@allanyiin/frontend-design": "^2026.3.31",
+    "@tauri-apps/api": "^2.10.1",
+    "@tauri-apps/plugin-dialog": "^2.7.0",
+    "@tauri-apps/plugin-fs": "^2.5.0",
+    "@tauri-apps/plugin-shell": "^2.3.5",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}

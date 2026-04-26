@@ -1,0 +1,191 @@
+.project-section {
+  margin: 0 12px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid #eee;
+}
+
+.project-section.collapsed .section-header {
+  border-bottom: none;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collapse-icon {
+  font-size: 12px;
+  color: #999;
+}
+
+.collapse-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.project-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.project-province {
+  font-size: 12px;
+  padding: 2px 8px;
+  background: #f0f0f0;
+  color: #666;
+  border-radius: 4px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #e6f7ff;
+  color: #1890ff;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.action-btn:hover {
+  background: #1890ff;
+  color: white;
+}
+
+.section-content {
+  padding: 16px;
+}
+
+/* 新增记录面板 */
+.add-record-panel {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.record-input {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  outline: none;
+}
+
+.record-input:focus {
+  border-color: #1890ff;
+}
+
+.add-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* 日期分组 */
+.date-group {
+  margin-bottom: 12px;
+}
+
+.date-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.weekday {
+  color: #999;
+}
+
+.records-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.record-item:hover {
+  background: #f5f5f5;
+}
+
+.record-content {
+  flex: 1;
+  font-size: 14px;
+}
+
+.record-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.record-item:hover .record-actions {
+  opacity: 1;
+}
+
+.record-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.record-btn:hover {
+  color: #1890ff;
+}
+
+.record-btn-svg {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.record-btn-svg:hover {
+  color: #1890ff;
+}

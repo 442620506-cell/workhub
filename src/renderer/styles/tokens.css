@@ -1,0 +1,259 @@
+/**
+ * Design Tokens - Work Hub App
+ * 完整参考 Coze 设计系统
+ */
+
+:root {
+  /* ========== 尺寸系统 (像素值) ========== */
+  --size-1: 1px;
+  --size-2: 2px;
+  --size-3: 3px;
+  --size-4: 4px;
+  --size-5: 5px;
+  --size-6: 6px;
+  --size-8: 8px;
+  --size-10: 10px;
+  --size-12: 12px;
+  --size-14: 14px;
+  --size-15: 15px;
+  --size-16: 16px;
+  --size-18: 18px;
+  --size-20: 20px;
+  --size-22: 22px;
+  --size-24: 24px;
+  --size-26: 26px;
+  --size-28: 28px;
+  --size-30: 30px;
+  --size-32: 32px;
+  --size-36: 36px;
+  --size-38: 38px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-64: 64px;
+
+  /* ========== 颜色系统 (RGB 值) ========== */
+  /* 前景色 fg */
+  --fg-1: 6, 7, 9;
+  --fg-2: 6, 7, 9;
+  --fg-3: 6, 7, 9;
+  --fg-4: 6, 7, 9;
+  --fg-5: 255, 255, 255;
+  --fg-6: 255, 255, 255;
+  --fg-7: 255, 255, 255;
+  --fg-white: 255, 255, 255;
+  --fg-revert: 255, 255, 255;
+
+  /* 前景色透明度 */
+  --fg-1-alpha: 0.3;
+  --fg-2-alpha: 0.5;
+  --fg-3-alpha: 0.8;
+  --fg-4-alpha: 0.96;
+  --fg-5-alpha: 1;
+  --fg-6-alpha: 1;
+  --fg-7-alpha: 1;
+
+  /* 背景色 bg */
+  --bg-1: 244, 244, 246;
+  --bg-2: 249, 249, 249;
+  --bg-3: 255, 255, 255;
+  --bg-4: 6, 7, 9;
+  --bg-5: 6, 7, 9;
+  --bg-6: 6, 7, 9;
+  --bg-7: 6, 7, 9;
+
+  /* 背景色透明度 */
+  --bg-4-alpha: 0.02;
+  --bg-5-alpha: 0.04;
+  --bg-6-alpha: 0.10;
+  --bg-7-alpha: 0.12;
+
+  /* 边框色 stroke */
+  --stroke-5: 6, 7, 9;
+  --stroke-6: 6, 7, 9;
+  --stroke-5-alpha: 0.10;
+  --stroke-6-alpha: 0.15;
+
+  /* 品牌色 brand */
+  --brand-1: 186, 192, 255;
+  --brand-2: 157, 162, 250;
+  --brand-3: 148, 152, 247;
+  --brand-5: 78, 64, 229;
+  --brand-6: 71, 44, 222;
+  --brand-7: 65, 35, 217;
+  --brand-30: 158, 161, 255;
+  --brand-50: 92, 97, 255;
+
+  /* 品牌色透明度 */
+  --brand-1-alpha: 0.20;
+  --brand-2-alpha: 0.38;
+  --brand-3-alpha: 0.44;
+  --brand-5-alpha: 1;
+  --brand-6-alpha: 1;
+  --brand-7-alpha: 1;
+
+  /* 语义色 */
+  --red-1: 255, 184, 190;
+  --red-2: 252, 146, 155;
+  --red-3: 250, 135, 145;
+  --red-5: 242, 36, 53;
+  --red-1-alpha: 0.20;
+  --red-2-alpha: 0.39;
+  --red-3-alpha: 0.46;
+  --red-5-alpha: 1;
+
+  --yellow-1: 255, 188, 133;
+  --yellow-2: 255, 169, 99;
+  --yellow-3: 255, 161, 84;
+  --yellow-5: 255, 129, 26;
+  --yellow-1-alpha: 0.20;
+  --yellow-2-alpha: 0.46;
+  --yellow-3-alpha: 0.56;
+  --yellow-5-alpha: 1;
+
+  --green-1: 103, 229, 146;
+  --green-2: 67, 217, 117;
+  --green-3: 54, 209, 106;
+  --green-5: 0, 184, 62;
+  --green-1-alpha: 0.20;
+  --green-2-alpha: 0.46;
+  --green-3-alpha: 0.53;
+  --green-5-alpha: 1;
+
+  /* ========== 组合颜色变量 ========== */
+  /* 前景色组合 */
+  --color-fg-plus: rgba(var(--fg-4), var(--fg-4-alpha));
+  --color-fg-primary: rgba(var(--fg-3), var(--fg-3-alpha));
+  --color-fg-secondary: rgba(var(--fg-2), var(--fg-2-alpha));
+  --color-fg-dim: rgba(var(--fg-1), var(--fg-1-alpha));
+  --color-fg-white: rgba(var(--fg-white), 1);
+  --color-fg-hglt: rgba(var(--brand-5), 1);
+  --color-fg-hglt-dim: rgba(var(--brand-3), var(--brand-3-alpha));
+
+  /* 背景色组合 */
+  --color-bg-1: rgba(var(--bg-1), 1);
+  --color-bg-2: rgba(var(--bg-2), 1);
+  --color-bg-3: rgba(var(--bg-3), 1);
+  --color-bg-5: rgba(var(--bg-5), var(--bg-5-alpha));
+  --color-bg-6: rgba(var(--bg-6), var(--bg-6-alpha));
+  --color-bg-7: rgba(var(--bg-7), var(--bg-7-alpha));
+
+  /* 边框色组合 */
+  --color-stroke-primary: rgba(var(--stroke-5), var(--stroke-5-alpha));
+  --color-stroke-plus: rgba(var(--stroke-6), var(--stroke-6-alpha));
+
+  /* 品牌色组合 */
+  --color-brand-1: rgba(var(--brand-1), var(--brand-1-alpha));
+  --color-brand-2: rgba(var(--brand-2), var(--brand-2-alpha));
+  --color-brand-3: rgba(var(--brand-3), var(--brand-3-alpha));
+  --color-brand-5: rgba(var(--brand-5), 1);
+  --color-brand-6: rgba(var(--brand-6), 1);
+  --color-brand-7: rgba(var(--brand-7), 1);
+
+  /* 交互背景 */
+  --color-primary-pressed: rgba(var(--bg-7), var(--bg-7-alpha));
+  --color-primary-hovered: rgba(var(--bg-6), var(--bg-6-alpha));
+  --color-primary: rgba(var(--bg-5), var(--bg-5-alpha));
+  --color-secondary-pressed: rgba(var(--bg-6), 0.14);
+  --color-secondary-hovered: rgba(var(--bg-5), 0.10);
+  --color-secondary: rgba(var(--bg-4), 0.02);
+
+  /* 品牌交互背景 */
+  --color-brand-pressed: rgba(var(--brand-3), var(--brand-3-alpha));
+  --color-brand-hovered: rgba(var(--brand-2), var(--brand-2-alpha));
+  --color-brand-bg: rgba(var(--brand-1), var(--brand-1-alpha));
+
+  /* ========== 阴影系统 ========== */
+  --shadow-small: 0 var(--size-2) var(--size-6) 0 rgba(0, 0, 0, 0.04), 0 var(--size-4) var(--size-12) 0 rgba(0, 0, 0, 0.02);
+  --shadow-default: 0 var(--size-4) var(--size-12) 0 rgba(0, 0, 0, 0.08), 0 var(--size-8) var(--size-24) 0 rgba(0, 0, 0, 0.04);
+  --shadow-large: 0 var(--size-8) var(--size-24) 0 rgba(0, 0, 0, 0.16), 0 var(--size-16) var(--size-48) 0 rgba(0, 0, 0, 0.08);
+
+  /* ========== 字体系统 ========== */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ========== 动效系统 ========== */
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 300ms;
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-colors: color var(--duration-fast) var(--ease-out),
+                       background-color var(--duration-fast) var(--ease-out),
+                       border-color var(--duration-fast) var(--ease-out);
+
+  /* ========== 布局尺寸 ========== */
+  --sidebar-width: var(--size-48);
+  --panel-width: 260px;
+  --panel-header-height: var(--size-40);
+  --item-height-large: var(--size-32);
+  --item-height-default: var(--size-28);
+  --item-height-small: var(--size-24);
+  --item-height-mini: var(--size-20);
+
+  /* ========== 层级缩进 ========== */
+  --indent-base: var(--size-16);
+  --indent-level-1: var(--size-8);
+  --indent-level-2: var(--size-16);
+  --indent-level-3: var(--size-24);
+  --indent-level-4: var(--size-32);
+
+  /* ========== Z-index ========== */
+  --z-sidebar: 100;
+  --z-panel: 200;
+  --z-modal: 1000;
+
+  /* ========== 间距别名（兼容其他组件） ========== */
+  --spacing-1: var(--size-4);
+  --spacing-2: var(--size-6);
+  --spacing-3: var(--size-8);
+  --spacing-4: var(--size-12);
+  --spacing-5: var(--size-14);
+  --spacing-6: var(--size-16);
+  --spacing-7: var(--size-20);
+  --spacing-8: var(--size-24);
+
+  /* ========== 表面颜色别名（兼容其他组件） ========== */
+  --surface: var(--color-bg-3);
+  --surface-subtle: var(--color-bg-2);
+  --surface-hover: var(--color-primary-hovered);
+  --surface-muted: var(--color-bg-1);
+
+  /* ========== 文本颜色别名 ========== */
+  --text: var(--color-fg-primary);
+  --text-secondary: var(--color-fg-secondary);
+  --text-muted: var(--color-fg-dim);
+
+  /* ========== 主色别名 ========== */
+  --primary: var(--color-brand-5);
+  --primary-hover: var(--color-brand-6);
+  --primary-subtle: var(--color-brand-bg);
+
+  /* ========== 边框别名 ========== */
+  --border-subtle: var(--color-stroke-primary);
+  --border-plus: var(--color-stroke-plus);
+
+  /* ========== 字体大小别名 ========== */
+  --font-size-xs: var(--size-10);
+  --font-size-sm: var(--size-12);
+  --font-size-base: var(--size-14);
+  --font-size-md: var(--size-16);
+  --font-size-lg: var(--size-20);
+  --font-size-xl: var(--size-24);
+
+  /* ========== 字体粗细别名 ========== */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========== 行高别名 ========== */
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  /* ========== 圆角别名 ========== */
+  --radius-xs: var(--size-3);
+  --radius-sm: var(--size-5);
+  --radius-md: var(--size-8);
+
+  /* ========== 动效别名 ========== */
+  --transition-fast: var(--duration-fast);
+}

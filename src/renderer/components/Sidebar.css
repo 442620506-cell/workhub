@@ -1,0 +1,83 @@
+/* ========== Sidebar 容器 ========== */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  background: rgba(var(--fg-1), 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--size-8);
+  padding-bottom: var(--size-8);
+  padding-left: var(--size-4);
+  padding-right: var(--size-4);
+  z-index: var(--z-sidebar);
+}
+
+/* ========== 顶部和底部分组 ========== */
+.sidebar-top,
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+/* ========== 侧边栏项目 ========== */
+.sidebar-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-36);
+  height: var(--size-36);
+  margin-bottom: var(--size-4);
+  border: none;
+  background: transparent;
+  border-radius: var(--size-8);
+  cursor: pointer;
+  transition: var(--transition-colors);
+  color: rgba(var(--fg-white), 0.60);
+}
+
+.sidebar-item:hover {
+  background: rgba(var(--fg-white), 0.08);
+  color: rgba(var(--fg-white), 1);
+}
+
+.sidebar-item.active {
+  background: rgba(var(--fg-white), 0.12);
+  color: rgba(var(--fg-white), 1);
+}
+
+/* 左侧选中指示条 - VS Code风格 */
+.sidebar-item.selected::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--size-4) * -1);
+  top: 0;
+  width: var(--size-2);
+  height: 100%;
+  background: var(--color-brand-5);
+  border-radius: 0;
+}
+
+/* ========== 图标 ========== */
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-24);
+  height: var(--size-24);
+}
+
+.sidebar-icon svg {
+  width: var(--size-20);
+  height: var(--size-20);
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}

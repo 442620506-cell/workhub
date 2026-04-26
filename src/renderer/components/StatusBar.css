@@ -1,0 +1,98 @@
+.status-bar {
+  height: var(--statusbar-height);
+  width: 100%;
+  background: rgb(var(--bg-0));
+  border-top: 1px solid rgba(var(--stroke-5), 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing-2);
+  z-index: var(--z-statusbar);
+  font-size: var(--font-12);
+  color: rgba(var(--text-inverse), 0.6);
+}
+
+/* 左侧区域 */
+.status-bar-left,
+.status-bar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+/* 单个项目 */
+.status-bar-item {
+  height: 100%;
+  padding: 0 var(--spacing-2);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  cursor: pointer;
+  transition: var(--transition-colors);
+  border-radius: 0;
+}
+
+.status-bar-item:hover {
+  background: rgba(var(--text-inverse), 0.12);
+  color: rgba(var(--text-inverse), 1);
+}
+
+.status-bar-item.active {
+  color: rgba(var(--text-inverse), 1);
+}
+
+/* 带图标的项目 */
+.status-bar-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+}
+
+.status-bar-item-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* 分隔线 */
+.status-bar-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(var(--text-inverse), 0.2);
+  margin: 0 var(--spacing-1);
+}
+
+/* 文本内容 */
+.status-bar-text {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+/* 特殊颜色标记 */
+.status-bar-item.success {
+  color: rgb(var(--success));
+}
+
+.status-bar-item.warning {
+  color: rgb(var(--warning));
+}
+
+.status-bar-item.danger {
+  color: rgb(var(--danger));
+}
+
+/* 选中指示器 */
+.status-bar-selection {
+  background: rgba(var(--brand-5), 0.15);
+  color: rgba(var(--text-inverse), 1);
+}
+
+/* 版本信息 */
+.status-bar-version {
+  opacity: 0.7;
+}

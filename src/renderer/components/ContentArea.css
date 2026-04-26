@@ -1,0 +1,1419 @@
+/* ========== Content Area ========== */
+.content-area {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-3);
+  overflow: hidden;
+}
+
+/* ========== Toolbar ========== */
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: var(--size-6) var(--size-12);
+  background: var(--color-bg-3);
+  border-bottom: 1px solid var(--color-stroke-primary);
+  gap: var(--size-12);
+}
+
+.view-switcher {
+  display: flex;
+  gap: var(--size-6);
+}
+
+.switch-btn {
+  height: var(--size-24);
+  padding-left: var(--size-12);
+  padding-right: var(--size-12);
+  border: none;
+  background: var(--color-bg-2);
+  border-radius: var(--size-6);
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.switch-btn:hover {
+  background: var(--color-primary-hovered);
+}
+
+.switch-btn.active {
+  background: var(--color-brand-5);
+  color: var(--color-fg-white);
+}
+
+/* ========== Date Filter ========== */
+.date-filter-bar,
+.focus-date-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+}
+
+.filter-label {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.filter-btn {
+  height: var(--size-24);
+  padding-left: var(--size-8);
+  padding-right: var(--size-8);
+  border: none;
+  background: var(--color-bg-2);
+  border-radius: var(--size-6);
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.filter-btn:hover {
+  background: var(--color-primary-hovered);
+}
+
+.filter-btn.active {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+/* ========== Focus Mode Header ========== */
+.focus-mode-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  height: var(--size-24);
+  padding-left: var(--size-8);
+  padding-right: var(--size-8);
+  border: none;
+  background: transparent;
+  border-radius: var(--size-6);
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.back-btn:hover {
+  background: var(--color-primary);
+}
+
+.focus-project-name {
+  font-size: var(--size-14);
+  font-weight: 600;
+  color: var(--color-fg-primary);
+}
+
+.focus-project-province {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+/* ========== Records Area ========== */
+.records-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--size-12);
+}
+
+/* ========== Day Section (Date View) ========== */
+.day-section {
+  margin-bottom: var(--size-16);
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  padding: var(--size-8) var(--size-12);
+  background: var(--color-bg-2);
+  border-radius: var(--size-8);
+}
+
+.day-date {
+  font-size: var(--size-16);
+  font-weight: 600;
+  color: var(--color-fg-primary);
+}
+
+.day-weekday {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.day-records {
+  padding: var(--size-8) 0;
+}
+
+/* ========== Record Item ========== */
+.record-item {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--size-12);
+  background: var(--color-bg-3);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-8);
+  margin-bottom: var(--size-8);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.record-item:hover {
+  border-color: var(--color-stroke-plus);
+}
+
+.record-item.editing {
+  cursor: default;
+  border-color: var(--color-brand-5);
+}
+
+.record-content {
+  flex: 1;
+}
+
+.record-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  margin-bottom: var(--size-6);
+}
+
+.record-time {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.record-project {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  font-size: var(--size-12);
+  padding: var(--size-2) var(--size-6);
+  border-radius: var(--size-4);
+  background: var(--color-bg-2);
+}
+
+.record-project.blue { color: var(--color-brand-5); }
+.record-project.green { color: rgba(var(--green-5), 1); }
+.record-project.purple { color: rgba(var(--brand-50), 1); }
+.record-project.red { color: rgba(var(--red-5), 1); }
+.record-project.orange { color: rgba(var(--yellow-5), 1); }
+
+.record-text {
+  font-size: var(--size-14);
+  color: var(--color-fg-primary);
+  line-height: 1.6;
+}
+
+.record-files {
+  display: flex;
+  gap: var(--size-8);
+  margin-top: var(--size-8);
+}
+
+.file-link {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+}
+
+/* ========== Edit Form ========== */
+.edit-form {
+  width: 100%;
+}
+
+.edit-field {
+  width: 100%;
+  min-height: 80px;
+  padding: var(--size-8);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-6);
+  font-size: var(--size-14);
+  background: var(--color-bg-3);
+  color: var(--color-fg-primary);
+  resize: vertical;
+  outline: none;
+}
+
+.edit-field:focus {
+  border-color: var(--color-brand-5);
+}
+
+.edit-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-6);
+  margin-top: var(--size-8);
+}
+
+.file-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-4);
+  padding: var(--size-2) var(--size-8);
+  background: var(--color-brand-bg);
+  border-radius: var(--size-4);
+  font-size: var(--size-12);
+  color: var(--color-fg-hglt);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.file-tag:hover {
+  background: var(--color-brand-hovered);
+}
+
+.remove-file {
+  width: var(--size-16);
+  height: var(--size-16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--color-fg-dim);
+  cursor: pointer;
+  border-radius: var(--size-4);
+}
+
+.remove-file:hover {
+  background: var(--color-primary);
+  color: var(--color-fg-secondary);
+}
+
+.add-file-btn {
+  width: var(--size-24);
+  height: var(--size-24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--color-bg-2);
+  border-radius: var(--size-4);
+  color: var(--color-fg-dim);
+  cursor: pointer;
+}
+
+.add-file-btn:hover {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.edit-actions {
+  display: flex;
+  gap: var(--size-8);
+  margin-top: var(--size-8);
+}
+
+.btn {
+  height: var(--size-28);
+  padding: var(--size-8) var(--size-16);
+  border: none;
+  border-radius: var(--size-6);
+  font-size: var(--size-12);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.btn.save {
+  background: var(--color-brand-5);
+  color: var(--color-fg-white);
+}
+
+.btn.cancel {
+  background: var(--color-bg-2);
+  color: var(--color-fg-secondary);
+}
+
+.btn.delete {
+  background: rgba(var(--red-5), 1);
+  color: var(--color-fg-white);
+}
+
+/* ========== Project View (Compact) ========== */
+.project-list-compact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-8);
+}
+
+.project-compact-item {
+  background: var(--color-bg-3);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-8);
+}
+
+.project-compact-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  padding: var(--size-10) var(--size-12);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.project-compact-header:hover {
+  background: var(--color-primary);
+}
+
+.expand-toggle {
+  width: var(--size-12);
+  display: flex;
+  align-items: center;
+  color: var(--color-fg-dim);
+}
+
+.dot {
+  width: var(--size-8);
+  height: var(--size-8);
+  border-radius: 50%;
+}
+
+.dot.blue { background: var(--color-brand-5); }
+.dot.green { background: rgba(var(--green-5), 1); }
+.dot.purple { background: rgba(var(--brand-50), 1); }
+.dot.red { background: rgba(var(--red-5), 1); }
+.dot.orange { background: rgba(var(--yellow-5), 1); }
+
+.project-compact-name {
+  font-size: var(--size-14);
+  font-weight: 500;
+  color: var(--color-fg-primary);
+}
+
+.project-compact-count {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+  background: var(--color-bg-2);
+  padding: var(--size-2) var(--size-6);
+  border-radius: var(--size-4);
+}
+
+.focus-btn-inline {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  height: var(--size-24);
+  padding-left: var(--size-8);
+  padding-right: var(--size-8);
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  border-radius: var(--size-5);
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.focus-btn-inline:hover {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.project-compact-records {
+  padding: var(--size-8);
+  border-top: 1px solid var(--color-stroke-primary);
+}
+
+/* ========== Date Group Compact ========== */
+.date-group-compact {
+  margin-bottom: var(--size-8);
+}
+
+.date-group-header-compact {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  padding: var(--size-6) var(--size-8);
+  background: var(--color-bg-2);
+  border-radius: var(--size-5);
+  cursor: pointer;
+}
+
+.expand-toggle-small {
+  width: var(--size-10);
+  display: flex;
+  align-items: center;
+  color: var(--color-fg-dim);
+}
+
+.date-label-compact {
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+}
+
+.date-count-compact {
+  font-size: var(--size-10);
+  color: var(--color-fg-dim);
+}
+
+.date-records-compact {
+  padding-left: var(--size-8);
+  margin-top: var(--size-6);
+}
+
+/* ========== Record Compact Item ========== */
+.record-compact-item {
+  padding: var(--size-8);
+  border-radius: var(--size-5);
+  margin-bottom: var(--size-4);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.record-compact-item:hover {
+  background: var(--color-primary);
+}
+
+.record-compact-item.editing {
+  background: var(--color-brand-bg);
+}
+
+.record-inline-view {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--size-8);
+}
+
+.record-compact-time {
+  font-size: var(--size-10);
+  color: var(--color-fg-dim);
+  white-space: nowrap;
+}
+
+.record-compact-text {
+  font-size: var(--size-12);
+  color: var(--color-fg-primary);
+  flex: 1;
+}
+
+.record-files-inline {
+  display: flex;
+  gap: var(--size-4);
+}
+
+.file-tag-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-4);
+  padding: var(--size-2) var(--size-6);
+  background: var(--color-brand-bg);
+  border-radius: var(--size-4);
+  font-size: var(--size-12);
+  color: var(--color-fg-hglt);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.file-tag-inline.clickable:hover {
+  background: var(--color-brand-hovered);
+}
+
+.file-tag-inline.more {
+  background: var(--color-bg-2);
+  color: var(--color-fg-dim);
+}
+
+/* ========== Record Edit Expanded ========== */
+.record-edit-expanded {
+  width: 100%;
+}
+
+/* 迷你富文本编辑器工具栏 */
+.mini-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+  padding: var(--size-4) var(--size-6);
+  background: var(--color-bg-2);
+  border-radius: var(--size-4) var(--size-4) 0 0;
+  border: 1px solid var(--color-stroke-primary);
+  border-bottom: none;
+}
+
+.editor-btn.mini {
+  width: var(--size-20);
+  height: var(--size-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: var(--size-3);
+  font-size: var(--size-12);
+  font-weight: 500;
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.editor-btn.mini:hover {
+  background: var(--color-primary);
+}
+
+.editor-btn.mini.italic {
+  font-style: italic;
+}
+
+.editor-btn.mini.underline {
+  text-decoration: underline;
+}
+
+.toolbar-divider-mini {
+  width: 1px;
+  height: var(--size-12);
+  background: var(--color-stroke-primary);
+  margin: 0 var(--size-2);
+}
+
+/* 迷你富文本编辑区域 */
+.mini-rich-textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: var(--size-8);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: 0 0 var(--size-4) var(--size-4);
+  font-size: var(--size-14);
+  line-height: 1.5;
+  background: var(--color-bg-3);
+  color: var(--color-fg-primary);
+  outline: none;
+  overflow-y: auto;
+}
+
+.mini-rich-textarea:focus {
+  border-color: var(--color-brand-5);
+}
+
+.mini-rich-textarea:empty:before {
+  content: "编辑内容...";
+  color: var(--color-fg-dim);
+}
+
+.record-edit-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--size-6);
+  gap: var(--size-8);
+}
+
+.record-edit-files {
+  display: flex;
+  gap: var(--size-4);
+  flex-wrap: wrap;
+}
+
+.record-edit-actions {
+  display: flex;
+  gap: var(--size-4);
+}
+
+.btn-mini {
+  height: var(--size-22);
+  padding: 0 var(--size-10);
+  border: none;
+  border-radius: var(--size-4);
+  font-size: var(--size-12);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.btn-mini.save {
+  background: var(--color-brand-5);
+  color: var(--color-fg-white);
+}
+
+.btn-mini.save:hover {
+  background: var(--color-brand-6);
+}
+
+.btn-mini.cancel {
+  background: var(--color-bg-2);
+  color: var(--color-fg-secondary);
+}
+
+.btn-mini.cancel:hover {
+  background: var(--color-primary-hovered);
+}
+
+/* ========== Focus Mode Records ========== */
+.focus-mode-records {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-12);
+}
+
+.focus-date-group {
+  background: var(--color-bg-3);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-8);
+}
+
+.date-group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  padding: var(--size-10) var(--size-12);
+  background: var(--color-bg-2);
+  border-radius: var(--size-8) var(--size-8) 0 0;
+  cursor: pointer;
+}
+
+.date-group-label {
+  font-size: var(--size-14);
+  font-weight: 500;
+  color: var(--color-fg-primary);
+}
+
+.date-group-count {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+  background: var(--color-bg-1);
+  padding: var(--size-2) var(--size-6);
+  border-radius: var(--size-4);
+}
+
+.focus-records {
+  padding: var(--size-8);
+}
+
+.record-focus-item {
+  padding: var(--size-12);
+  border-radius: var(--size-6);
+  margin-bottom: var(--size-6);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.record-focus-item:hover {
+  background: var(--color-primary);
+}
+
+.record-focus-item.editing {
+  background: var(--color-brand-bg);
+}
+
+.record-focus-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-6);
+}
+
+.record-focus-meta {
+  display: flex;
+  align-items: center;
+}
+
+.record-focus-time {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.record-focus-text {
+  font-size: var(--size-14);
+  color: var(--color-fg-primary);
+  line-height: 1.6;
+}
+
+.record-focus-files {
+  display: flex;
+  gap: var(--size-6);
+}
+
+.file-tag-focus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-4);
+  padding: var(--size-2) var(--size-8);
+  background: var(--color-brand-bg);
+  border-radius: var(--size-4);
+  font-size: var(--size-12);
+  color: var(--color-fg-hglt);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.file-tag-focus:hover {
+  background: var(--color-brand-hovered);
+}
+
+/* ========== Input Bar Fixed ========== */
+.input-bar-fixed {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-3);
+  border-top: 1px solid var(--color-stroke-primary);
+  position: relative;
+  padding-bottom: var(--size-8);
+  flex: 0 0 auto;
+}
+
+.editor-drag-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--size-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: row-resize;
+  z-index: 100;
+}
+
+.editor-drag-handle:hover .drag-line {
+  background: var(--color-brand-5);
+}
+
+.drag-line {
+  width: var(--size-40);
+  height: var(--size-3);
+  background: var(--color-stroke-primary);
+  border-radius: var(--size-2);
+}
+
+/* ========== Project Selector ========== */
+.editor-project-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  padding: var(--size-8);
+  background: var(--color-bg-2);
+}
+
+.selector-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  height: var(--size-28);
+  padding-left: var(--size-10);
+  padding-right: var(--size-10);
+  border: none;
+  background: transparent;
+  border-radius: var(--size-6);
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.selector-btn:hover {
+  background: var(--color-primary);
+}
+
+.selector-btn.active {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+/* ========== Rich Editor ========== */
+.rich-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-8);
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  padding-bottom: var(--size-8);
+}
+
+.editor-btn {
+  width: var(--size-28);
+  height: var(--size-28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--color-bg-2);
+  border-radius: var(--size-5);
+  font-size: var(--size-14);
+  font-weight: 500;
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.editor-btn:hover {
+  background: var(--color-primary);
+}
+
+.editor-btn.active {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.editor-btn.italic {
+  font-style: italic;
+}
+
+.editor-btn.underline {
+  text-decoration: underline;
+}
+
+.editor-btn.strike {
+  text-decoration: line-through;
+}
+
+.editor-btn.heading-btn {
+  font-size: var(--size-12);
+  font-weight: 700;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: var(--size-20);
+  background: var(--color-stroke-primary);
+  margin-left: var(--size-4);
+  margin-right: var(--size-4);
+}
+
+.rich-textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 60px;
+  padding: var(--size-8);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-6);
+  font-size: var(--size-14);
+  line-height: 1.5;
+  background: var(--color-bg-3);
+  color: var(--color-fg-primary);
+  outline: none;
+  overflow-y: auto;
+}
+
+.rich-textarea.drag-over {
+  border-color: var(--color-brand-5);
+  background: var(--color-brand-bg);
+}
+
+.rich-textarea:focus {
+  border-color: var(--color-brand-5);
+}
+
+.rich-textarea:empty:before {
+  content: attr(data-placeholder);
+  color: var(--color-fg-dim);
+  pointer-events: none;
+}
+
+.rich-textarea h1 {
+  font-size: var(--size-24);
+  font-weight: 700;
+  margin: var(--size-8) 0;
+}
+
+.rich-textarea h2 {
+  font-size: var(--size-20);
+  font-weight: 600;
+  margin: var(--size-6) 0;
+}
+
+.rich-textarea h3 {
+  font-size: var(--size-16);
+  font-weight: 600;
+  margin: var(--size-4) 0;
+}
+
+.rich-textarea ul,
+.rich-textarea ol {
+  margin: var(--size-4) 0;
+  padding-left: var(--size-20);
+}
+
+.rich-textarea li {
+  margin: var(--size-2) 0;
+}
+
+.rich-textarea strong {
+  font-weight: 700;
+}
+
+.rich-textarea em {
+  font-style: italic;
+}
+
+.rich-textarea u {
+  text-decoration: underline;
+}
+
+.rich-textarea s {
+  text-decoration: line-through;
+}
+
+/* ========== Editor Footer ========== */
+.editor-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--size-8);
+}
+
+.editor-hint {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.send-btn-fixed {
+  height: var(--size-32);
+  padding-left: var(--size-16);
+  padding-right: var(--size-16);
+  border: none;
+  background: var(--color-brand-5);
+  border-radius: var(--size-8);
+  font-size: var(--size-14);
+  color: var(--color-fg-white);
+  cursor: pointer;
+}
+
+.send-btn-fixed:hover {
+  background: var(--color-brand-6);
+}
+
+/* ========== Attached Files Bar ========== */
+.attached-files-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-6);
+  padding: var(--size-8);
+  background: var(--color-bg-2);
+}
+
+/* ========== Empty Hint ========== */
+.empty-hint {
+  font-size: var(--size-14);
+  color: var(--color-fg-dim);
+  text-align: center;
+  padding: var(--size-24);
+}
+
+/* ========== Record Linked Badge ========== */
+.record-linked-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--size-2) var(--size-4);
+  background: var(--color-brand-bg);
+  border-radius: var(--size-4);
+  color: var(--color-fg-hglt);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.record-linked-badge:hover {
+  background: var(--color-brand-hovered);
+}
+
+.record-focus-meta .record-linked-badge {
+  margin-left: var(--size-8);
+}
+
+/* ========== Create Todo Modal ========== */
+.create-todo-modal {
+  width: 360px;
+  background: var(--color-bg-3);
+  border-radius: var(--size-12);
+  box-shadow: var(--shadow-large);
+}
+
+.create-todo-modal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--size-12) var(--size-16);
+  border-bottom: 1px solid var(--color-stroke-primary);
+}
+
+.create-todo-modal .modal-header h3 {
+  font-size: var(--size-14);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-fg-primary);
+}
+
+.create-todo-modal .modal-body {
+  padding: var(--size-16);
+}
+
+.create-todo-modal .form-field {
+  margin-bottom: var(--size-12);
+}
+
+.create-todo-modal .form-field label {
+  display: block;
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+  margin-bottom: var(--size-6);
+}
+
+.create-todo-modal .form-row {
+  display: flex;
+  gap: var(--size-12);
+}
+
+.create-todo-modal .form-row .form-field {
+  flex: 1;
+}
+
+.create-todo-modal .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--size-8);
+  margin-top: var(--size-16);
+}
+
+.create-todo-modal .btn {
+  height: var(--size-32);
+  padding: 0 var(--size-16);
+  border: none;
+  border-radius: var(--size-8);
+  font-size: var(--size-14);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.create-todo-modal .btn.cancel {
+  background: var(--color-bg-2);
+  color: var(--color-fg-secondary);
+}
+
+.create-todo-modal .btn.cancel:hover {
+  background: var(--color-primary-hovered);
+}
+
+.create-todo-modal .btn.primary {
+  background: var(--color-brand-5);
+  color: var(--color-fg-white);
+}
+
+.create-todo-modal .btn.primary:hover {
+  background: var(--color-brand-6);
+}
+
+/* ========== File Selector Modal ========== */
+.file-selector-modal {
+  width: 400px;
+  max-height: 500px;
+  background: var(--color-bg-3);
+  border-radius: var(--size-12);
+  box-shadow: var(--shadow-large);
+}
+
+.file-selector-modal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--size-12) var(--size-16);
+  border-bottom: 1px solid var(--color-stroke-primary);
+}
+
+.file-selector-modal .modal-header h3 {
+  font-size: var(--size-14);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-fg-primary);
+}
+
+.file-selector-modal .modal-body {
+  padding: var(--size-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-12);
+}
+
+.file-selector-project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-8);
+}
+
+.file-selector-project-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  height: var(--size-28);
+  padding: 0 var(--size-12);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-6);
+  background: var(--color-bg-2);
+  font-size: var(--size-12);
+  color: var(--color-fg-primary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.file-selector-project-btn:hover {
+  background: var(--color-primary-hovered);
+}
+
+.file-selector-project-btn.active {
+  border-color: var(--color-brand-5);
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.file-selector-folder-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-6);
+  padding: var(--size-8);
+  background: var(--color-bg-2);
+  border-radius: var(--size-6);
+}
+
+.file-selector-folder-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  height: var(--size-24);
+  padding: 0 var(--size-10);
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-4);
+  background: var(--color-bg-3);
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.file-selector-folder-btn:hover {
+  background: var(--color-primary-hovered);
+}
+
+.file-selector-folder-btn.active {
+  border-color: var(--color-brand-5);
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.file-selector-file-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+  padding: var(--size-8);
+  background: var(--color-bg-2);
+  border-radius: var(--size-6);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.file-selector-file-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  height: var(--size-28);
+  padding: 0 var(--size-10);
+  border: none;
+  border-radius: var(--size-4);
+  background: transparent;
+  font-size: var(--size-12);
+  color: var(--color-fg-primary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+  text-align: left;
+}
+
+.file-selector-file-btn:hover {
+  background: var(--color-primary-hovered);
+}
+
+.file-selector-file-btn.active {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.file-selector-empty {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+  padding: var(--size-8);
+  text-align: center;
+}
+
+.file-selector-modal .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--size-8);
+  margin-top: var(--size-12);
+}
+
+.file-selector-modal .btn {
+  height: var(--size-32);
+  padding: 0 var(--size-16);
+  border: none;
+  border-radius: var(--size-8);
+  font-size: var(--size-14);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.file-selector-modal .btn.cancel {
+  background: var(--color-bg-2);
+  color: var(--color-fg-secondary);
+}
+
+.file-selector-modal .btn.cancel:hover {
+  background: var(--color-primary-hovered);
+}
+
+.file-selector-modal .btn.primary {
+  background: var(--color-brand-5);
+  color: var(--color-fg-white);
+}
+
+.file-selector-modal .btn.primary:hover {
+  background: var(--color-brand-6);
+}
+
+.file-selector-modal .btn.primary:disabled {
+  background: var(--color-bg-2);
+  color: var(--color-fg-dim);
+  cursor: not-allowed;
+}
+
+/* ========== 产品详情页 ========== */
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-16);
+}
+
+.product-info {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.section-label {
+  font-size: var(--size-13);
+  font-weight: 500;
+  color: var(--color-fg-secondary);
+  padding: var(--size-8) var(--size-4);
+  margin-bottom: var(--size-8);
+}
+
+.focus-records-section {
+  margin-top: var(--size-12);
+}
+
+.product-folders-section {
+  margin-bottom: var(--size-8);
+}
+
+.product-folders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-8);
+}
+
+.product-folder-item {
+  background: var(--color-bg-2);
+  border-radius: var(--size-8);
+  padding: var(--size-8);
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  padding: var(--size-4);
+}
+
+.folder-name {
+  font-size: var(--size-13);
+  color: var(--color-fg-primary);
+  flex: 1;
+}
+
+.folder-count {
+  font-size: var(--size-11);
+  color: var(--color-fg-dim);
+  background: var(--color-bg-3);
+  padding: var(--size-2) var(--size-6);
+  border-radius: var(--size-4);
+}
+
+.folder-files {
+  padding: var(--size-4) var(--size-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+
+.product-file-item {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  padding: var(--size-6) var(--size-8);
+  border-radius: var(--size-6);
+  transition: var(--transition-colors);
+}
+
+.product-file-item.clickable:hover {
+  background: var(--color-primary-hovered);
+  cursor: pointer;
+}
+
+.product-file-item .file-name {
+  font-size: var(--size-13);
+  color: var(--color-fg-secondary);
+  flex: 1;
+}
+
+.product-file-item .file-ext {
+  font-size: var(--size-11);
+  color: var(--color-fg-dim);
+}
+
+.product-records-section {
+  flex: 1;
+}
+
+.product-records-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-8);
+}
+
+.product-record-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--size-8);
+  padding: var(--size-8);
+  background: var(--color-bg-2);
+  border-radius: var(--size-8);
+}
+
+.product-record-item .record-time {
+  font-size: var(--size-11);
+  color: var(--color-fg-dim);
+  flex-shrink: 0;
+}
+
+.product-record-item .record-date {
+  font-size: var(--size-11);
+  color: var(--color-brand-5);
+  flex-shrink: 0;
+}
+
+.product-record-item .record-content {
+  font-size: var(--size-13);
+  color: var(--color-fg-primary);
+  flex: 1;
+}
+
+/* ========== File Reference Tag ========== */
+/* 统一的文件引用/附件标签样式，用于编辑器内和记录列表中 */

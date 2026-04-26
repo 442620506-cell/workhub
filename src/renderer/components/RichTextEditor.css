@@ -1,0 +1,658 @@
+/* ========== Rich Text Editor Component ========== */
+.rich-text-editor {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-3);
+  padding-left: var(--size-12);
+  padding-right: var(--size-12);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rich-text-editor.mini {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ========== Target Info (Edit Mode) ========== */
+.editor-target-info {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  padding: var(--size-6) var(--size-8);
+  background: var(--color-bg-2);
+  border-radius: var(--size-6);
+  margin-bottom: var(--size-8);
+}
+
+.editor-target-info .type-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--size-2) var(--size-6);
+  border-radius: var(--size-3);
+  font-size: var(--size-11);
+  font-weight: 500;
+}
+
+.editor-target-info .product-tag {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.editor-target-info .project-tag {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.editor-target-info .target-name {
+  font-size: var(--size-13);
+  font-weight: 500;
+  color: var(--color-fg-primary);
+}
+
+/* ========== Project Selector ========== */
+.editor-project-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  padding: var(--size-4) var(--size-12);
+  background: var(--color-bg-2);
+  margin-left: calc(-1 * var(--size-12));
+  margin-right: calc(-1 * var(--size-12));
+  overflow-x: auto;
+}
+
+.selector-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--size-6);
+  height: var(--size-28);
+  padding-left: var(--size-10);
+  padding-right: var(--size-10);
+  border: none;
+  background: transparent;
+  border-radius: var(--size-6);
+  font-size: var(--size-12);
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+  white-space: nowrap;
+}
+
+.selector-btn:hover {
+  background: var(--color-primary);
+}
+
+.selector-btn.active {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.selector-btn .type-tag-mini {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--size-2) var(--size-4);
+  border-radius: var(--size-2);
+  font-size: var(--size-10);
+  font-weight: 500;
+}
+
+.selector-btn .product-tag {
+  background: var(--color-brand-bg);
+  color: var(--color-brand-5);
+}
+
+.selector-btn .project-tag {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.dot {
+  width: var(--size-8);
+  height: var(--size-8);
+  border-radius: 50%;
+}
+
+.dot.blue { background: var(--color-brand-5); }
+.dot.green { background: rgba(var(--green-5), 1); }
+.dot.purple { background: rgba(var(--brand-50), 1); }
+.dot.red { background: rgba(var(--red-5), 1); }
+.dot.orange { background: rgba(var(--yellow-5), 1); }
+
+/* ========== Toolbar ========== */
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  padding: var(--size-6) 0;
+}
+
+.editor-btn {
+  width: var(--size-28);
+  height: var(--size-28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--color-bg-2);
+  border-radius: var(--size-5);
+  font-size: var(--size-14);
+  font-weight: 500;
+  color: var(--color-fg-secondary);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.editor-btn:hover {
+  background: var(--color-primary);
+}
+
+.editor-btn.active {
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+}
+
+.editor-btn.italic {
+  font-style: italic;
+}
+
+.editor-btn.underline {
+  text-decoration: underline;
+}
+
+.editor-btn.strike {
+  text-decoration: line-through;
+}
+
+.editor-btn.heading-btn {
+  font-size: var(--size-12);
+  font-weight: 700;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: var(--size-20);
+  background: var(--color-stroke-primary);
+  margin-left: var(--size-4);
+  margin-right: var(--size-4);
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.toolbar-hint {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+  margin-left: auto;
+}
+
+.editor-btn.cancel-btn {
+  width: auto;
+  padding: var(--size-4) var(--size-12);
+  background: var(--color-bg-1);
+  color: var(--color-fg-secondary);
+}
+
+.editor-btn.cancel-btn:hover {
+  background: var(--color-primary-hovered);
+  color: var(--color-fg-primary);
+}
+
+/* ========== MP3 Parser ========== */
+.editor-btn.mp3-btn {
+  color: var(--color-purple-5);
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+  width: auto;
+  padding-left: var(--size-8);
+  padding-right: var(--size-8);
+}
+
+.editor-btn.mp3-btn:hover {
+  background: rgba(var(--purple-1), var(--purple-1-alpha));
+}
+
+.mp3-btn-label {
+  font-size: var(--size-12);
+}
+
+.mp3-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.mp3-modal {
+  background: var(--color-bg-3);
+  border-radius: var(--size-8);
+  width: 400px;
+  box-shadow: var(--shadow-large);
+}
+
+.mp3-modal-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  padding: var(--size-12);
+  border-bottom: 1px solid var(--color-stroke-primary);
+  font-size: var(--size-14);
+  font-weight: 600;
+  color: var(--color-fg-primary);
+}
+
+.mp3-close-btn {
+  width: var(--size-24);
+  height: var(--size-24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: var(--size-4);
+  cursor: pointer;
+  color: var(--color-fg-dim);
+  margin-left: auto;
+}
+
+.mp3-close-btn:hover {
+  background: var(--color-primary-hovered);
+}
+
+.mp3-modal-body {
+  padding: var(--size-16);
+}
+
+.mp3-drop-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-8);
+  padding: var(--size-24);
+  border: 2px dashed var(--color-stroke-primary);
+  border-radius: var(--size-8);
+  color: var(--color-fg-dim);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.mp3-drop-area:hover {
+  border-color: var(--color-brand-5);
+  background: var(--color-brand-bg);
+}
+
+.mp3-drop-text {
+  font-size: var(--size-14);
+  color: var(--color-fg-secondary);
+}
+
+.mp3-drop-hint {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.mp3-selected-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--size-8) var(--size-12);
+  background: var(--color-bg-2);
+  border-radius: var(--size-6);
+  margin-top: var(--size-12);
+}
+
+.mp3-selected-file .file-name {
+  font-size: var(--size-13);
+  color: var(--color-fg-primary);
+}
+
+.mp3-selected-file .file-size {
+  font-size: var(--size-12);
+  color: var(--color-fg-dim);
+}
+
+.mp3-modal-actions {
+  display: flex;
+  gap: var(--size-8);
+  justify-content: center;
+  margin-top: var(--size-16);
+}
+
+/* MP3解析预览列表 */
+.mp3-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-12);
+}
+
+.preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-6);
+}
+
+.preview-title {
+  font-size: var(--size-13);
+  font-weight: 600;
+  color: var(--color-fg-primary);
+}
+
+.preview-text-content {
+  padding: var(--size-12);
+  background: var(--color-bg-2);
+  border-radius: var(--size-6);
+  font-size: var(--size-13);
+  line-height: 1.6;
+  color: var(--color-fg-primary);
+}
+
+.preview-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+
+.preview-item {
+  display: flex;
+  align-items: center;
+  gap: var(--size-8);
+  padding: var(--size-8);
+  background: var(--color-bg-2);
+  border-radius: var(--size-4);
+}
+
+.preview-target {
+  font-size: var(--size-12);
+  color: var(--color-brand-5);
+  font-weight: 500;
+}
+
+.preview-arrow {
+  color: var(--color-fg-dim);
+  font-size: var(--size-12);
+}
+
+.preview-content {
+  font-size: var(--size-13);
+  color: var(--color-fg-primary);
+}
+
+.todo-item .preview-content {
+  flex: 1;
+}
+
+.priority-tag {
+  display: inline-block;
+  padding: var(--size-2) var(--size-6);
+  border-radius: var(--size-3);
+  font-size: var(--size-11);
+  font-weight: 500;
+}
+
+.priority-tag.priority-高 {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.priority-tag.priority-中 {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.priority-tag.priority-低 {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.mp3-parse-result h4 {
+  font-size: var(--size-14);
+  color: var(--color-fg-primary);
+  margin-top: var(--size-8);
+  margin-bottom: var(--size-4);
+}
+
+.mp3-parse-result .parse-section {
+  margin-bottom: var(--size-8);
+}
+
+.mp3-parse-result .todo-tag {
+  display: inline-block;
+  padding: var(--size-2) var(--size-6);
+  background: var(--color-brand-bg);
+  color: var(--color-fg-hglt);
+  border-radius: var(--size-3);
+  font-size: var(--size-11);
+  font-weight: 500;
+}
+
+.mp3-parse-result ul {
+  margin: var(--size-4) 0;
+  padding-left: var(--size-16);
+}
+
+.mp3-parse-result li {
+  margin-bottom: var(--size-4);
+}
+
+/* ========== Rich Textarea ========== */
+.rich-textarea {
+  flex: 1;
+  min-height: 60px;
+  padding: var(--size-12);
+  font-size: var(--size-14);
+  line-height: 1.5;
+  background: var(--color-bg-3);
+  color: var(--color-fg-primary);
+  outline: none;
+  overflow-y: auto;
+}
+
+.rich-textarea:focus {
+  border-bottom: 2px solid var(--color-brand-5);
+}
+
+.rich-textarea:empty:before {
+  content: attr(data-placeholder);
+  color: var(--color-fg-dim);
+  pointer-events: none;
+}
+
+.rich-textarea h1 {
+  font-size: var(--size-24);
+  font-weight: 700;
+  margin: var(--size-8) 0;
+}
+
+.rich-textarea h2 {
+  font-size: var(--size-20);
+  font-weight: 600;
+  margin: var(--size-6) 0;
+}
+
+.rich-textarea h3 {
+  font-size: var(--size-16);
+  font-weight: 600;
+  margin: var(--size-4) 0;
+}
+
+.rich-textarea ul,
+.rich-textarea ol {
+  margin: var(--size-4) 0;
+  padding-left: var(--size-20);
+}
+
+.rich-textarea li {
+  margin: var(--size-2) 0;
+}
+
+.rich-textarea strong {
+  font-weight: 700;
+}
+
+.rich-textarea em {
+  font-style: italic;
+}
+
+.rich-textarea u {
+  text-decoration: underline;
+}
+
+.rich-textarea s {
+  text-decoration: line-through;
+}
+
+/* ========== Attached Files Bar ========== */
+.attached-files-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-6);
+  padding: var(--size-8);
+  background: var(--color-bg-2);
+}
+
+/* ========== File Tag ========== */
+.file-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-4);
+  padding: var(--size-2) var(--size-8);
+  background: var(--color-brand-bg);
+  border-radius: var(--size-4);
+  font-size: var(--size-12);
+  color: var(--color-fg-hglt);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.file-tag:hover {
+  background: var(--color-brand-hovered);
+}
+
+.file-tag.clickable {
+  cursor: pointer;
+}
+
+/* 原子文件标签 - 不可编辑，作为整体删除 */
+.file-tag-atomic {
+  display: inline-block;
+  padding: var(--size-2) var(--size-8);
+  padding-right: var(--size-4);
+  background: var(--color-brand-bg);
+  border-radius: var(--size-4);
+  font-size: var(--size-12);
+  color: var(--color-fg-hglt);
+  cursor: pointer;
+  transition: var(--transition-colors);
+  position: relative;
+}
+
+.file-tag-atomic:hover {
+  background: var(--color-brand-hovered);
+}
+
+.file-tag-atomic:focus {
+  outline: 2px solid var(--color-brand-5);
+  outline-offset: 1px;
+}
+
+/* 原子文件标签的删除按钮（hover时显示） */
+.file-tag-atomic .file-remove-btn {
+  display: none;
+  width: var(--size-14);
+  height: var(--size-14);
+  margin-left: var(--size-4);
+  border: none;
+  background: transparent;
+  color: var(--color-fg-hglt);
+  cursor: pointer;
+  border-radius: var(--size-2);
+  font-size: var(--size-10);
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.file-tag-atomic:hover .file-remove-btn {
+  display: inline-block;
+}
+
+.file-tag-atomic .file-remove-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* 编辑器内的原子文件标签 */
+.rich-textarea .file-tag-atomic {
+  user-select: all;
+  -webkit-user-modify: read-only;
+}
+
+.remove-file {
+  width: var(--size-16);
+  height: var(--size-16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--color-fg-dim);
+  cursor: pointer;
+  border-radius: var(--size-4);
+  margin-left: var(--size-4);
+}
+
+.remove-file:hover {
+  background: var(--color-primary);
+  color: var(--color-fg-secondary);
+}
+
+/* ========== Mini Mode (for inline editing) ========== */
+.rich-text-editor.mini {
+  border: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-6);
+}
+
+.rich-text-editor.mini .editor-toolbar {
+  padding: var(--size-4) var(--size-6);
+  gap: var(--size-2);
+  border-bottom: 1px solid var(--color-stroke-primary);
+  border-radius: var(--size-6) var(--size-6) 0 0;
+}
+
+.rich-text-editor.mini .editor-btn {
+  width: var(--size-20);
+  height: var(--size-20);
+  font-size: var(--size-12);
+  border-radius: var(--size-3);
+}
+
+.rich-text-editor.mini .toolbar-divider {
+  height: var(--size-12);
+  margin: 0 var(--size-2);
+}
+
+.rich-text-editor.mini .rich-textarea {
+  min-height: 90px;
+  border-radius: 0;
+}
+
+.rich-text-editor.mini .editor-footer-bar {
+  display: none;
+}
+
+.rich-text-editor.mini .toolbar-hint {
+  font-size: var(--size-10);
+}
+
+/* Mini editor without project selector */
+.rich-text-editor.mini .editor-project-selector {
+  display: none;
+}
