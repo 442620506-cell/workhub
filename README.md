@@ -22,28 +22,11 @@ WorkHub 是一款面向**个人工作**的一体式管理桌面应用，将任�
 - 待办与项目脱节，完成无同步
 - 文件散落各处，历史难追溯
 
-## 安装与运行
+## 如何使用
 
-### 普通用户（推荐）
+直接双击根目录下的 **`WorkHub.exe`** 即可启动应用，无需安装、无需任何环境依赖。
 
-下载 `WorkHub.exe` 双击安装运行，无需任何环境依赖。
-
-### 开发者模式
-
-需要 Node.js 18+ 和 Rust 环境：
-
-```bash
-# 安装依赖
-npm install
-
-# 开发模式运行
-npm run tauri dev
-
-# 构建生产版本
-npm run tauri build
-```
-
-构建产物位于 `src-tauri/target/release/bundle/`。
+> 适用于 Windows 系统，首次启动可能需要几秒钟加载时间。
 
 ## 作品边界与不包含内容
 
